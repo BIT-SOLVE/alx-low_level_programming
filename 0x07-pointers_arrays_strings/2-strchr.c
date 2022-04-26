@@ -1,21 +1,23 @@
-#include "main"
+#include "main.h"
 
-_strchr - locate character in string
-@s: source string
-@c: character to find
-Return: the string from character found
-*_strchr(char *s, char c)
-	int a = 0, b;
-	while (s[a])
+/**
+ * *_strchr - fills memory with a constant byte.
+ * @s: pointer to put the constant
+ * @c: constant
+ * Return: s
+ */
+
+char *_strchr(char *s, char c)
 {
-	a++;
-}
-for (b = 0; b <= a; b++)
-{
-	if (c == s[b])
+	int i;
+
+	for (i = 0; s[i] >= '\0'  ; i++)
 	{
-		s += b;
-		return (s);
+		if (s[i] == c)
+		{
+			return (s + i);
+		}
 	}
+
+	return ('\0');
 }
-return ('\0');
